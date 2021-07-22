@@ -1,0 +1,65 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --dark-cyan: hsl(183, 100%, 15%);
+  --dark-grey-cyan-1: hsl(186, 14%, 43%);
+  --dark-grey-cyan-2: hsl(184, 14%, 56%);
+  --light-grey-cyan-1: hsl(185, 41%, 84%);
+  --light-grey-cyan-2: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+
+  font-family: "Space Mono";
+  font-size: 24px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-grey-cyan-1);
+}
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator-title {
+  font-size: 1rem;
+  color: var(--dark-cyan);
+  font-weight: 400;
+}
+
+.calculator-body {
+  background-color: var(--white);
+  display: flex;
+  border-radius: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.input-page {
+  width: 10rem;
+  height: 10rem;
+}
+
+.output-page {
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--dark-cyan);
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.tip-container {
+  display: flex;
+  justify-content: center;
+}
+
+.money-title {
+  color: var(--white);
+  font-size: 0.7rem;
+}
+
+.money-display {
+  color: var(--strong-cyan);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
