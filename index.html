@@ -16,14 +16,18 @@
       href="https://fonts.googleapis.com/css?family=Space+Mono"
     />
     <title>Frontend Mentor | Tip calculator app</title>
-
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
 
     <style>
       .attribution {
         font-size: 11px;
         text-align: center;
-        position: fixed;
+        position: absolute;
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 0);
@@ -34,26 +38,39 @@
     </style>
   </head>
   <body>
-    <div class="calculator-container">
-      <h1 class="calculator-title">SPLI<br />TTER</h1>
-      <div class="calculator-body">
-        <div class="input-page"></div>
-        <div class="output-page">
-          <div class="tip-container">
-            <div class="money-title">Tip Amount</div>
-            <div class="money-display">$0.00</div>
+    <header>SPLITTER</header>
+    <div class="container">
+      <div class="calculator">
+        <div class="input-page">
+          <h5 class="section-title">Bill</h5>
+          <div class="number-input" id="dollar">
+            <input type="number" />
           </div>
+          <h5 class="section-title">Select Tip %</h5>
+          <div class="tip-selector">
+            <button data-tip>5%</button>
+            <button data-tip>10%</button>
+            <button data-tip>15%</button>
+            <button data-tip>25%</button>
+            <button data-tip>50%</button>
+            <input type="number" data-tip class="custom" placeholder="Custom"></input>
+          </div>
+          <h5 class="section-title">Number of People</h5>
+          <div class="number-input" id="people">
+            <input type="number" />
+          </div>
+        </div>
+        <div class="output-page">
+          123124
         </div>
       </div>
     </div>
-    <!-- Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-    person Total / person Reset -->
 
-    <div class="attribution">
+    <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Zimin Yang</a>.
-    </div>
+    </div> -->
   </body>
 </html>

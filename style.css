@@ -7,59 +7,162 @@
   --light-grey-cyan-2: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
 
+  --header-letter-spacing: 0.45em;
+
   font-family: "Space Mono";
-  font-size: 24px;
+  font-weight: 700;
 }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
+  font-size: 1.5rem;
   background-color: var(--light-grey-cyan-1);
 }
-.calculator-container {
+
+header {
+  margin: 0.8em auto 0;
+  padding: 0;
+  color: var(--dark-cyan);
+  text-align: center;
+  letter-spacing: var(--header-letter-spacing);
+  font-size: 1rem;
+
+  width: calc(4ch + 4 * var(--header-letter-spacing));
+  word-break: break-all;
+}
+
+.container {
+  margin-top: 1.36rem;
+  padding: 0.15rem 1.56rem 0;
+  background-color: var(--white);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.calculator {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.calculator-title {
-  font-size: 1rem;
-  color: var(--dark-cyan);
-  font-weight: 400;
-}
-
-.calculator-body {
-  background-color: var(--white);
-  display: flex;
-  border-radius: 0.5rem;
-  flex-wrap: wrap;
 }
 
 .input-page {
-  width: 10rem;
-  height: 10rem;
-}
-
-.output-page {
-  width: 10rem;
-  height: 10rem;
-  background-color: var(--dark-cyan);
-  border-radius: 0.5rem;
-  margin: 1rem;
-}
-
-.tip-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.money-title {
-  color: var(--white);
-  font-size: 0.7rem;
+.section-title {
+  font-size: 0.75rem;
+  color: var(--dark-grey-cyan-1);
+  margin: 1.45rem 0 0.2rem;
 }
 
-.money-display {
-  color: var(--strong-cyan);
-  font-size: 1.5rem;
+.number-input {
+  position: relative;
+}
+
+.number-input::before {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--dark-grey-cyan-2);
+}
+
+input[type="number"] {
+  border: none;
+  outline: none;
+  display: block;
+  width: 100%;
+  height: 1.9rem;
+  font-family: inherit;
+
+  background-color: var(--light-grey-cyan-2);
+  border-radius: 0.3rem;
+
+  text-align: right;
+  padding-right: 0.7rem;
+  box-sizing: border-box;
+
+  color: var(--dark-cyan);
+  font-size: 1.4rem;
   font-weight: 700;
+}
+
+#dollar::before {
+  content: "$";
+}
+
+#people::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 0.7rem;
+  content: "\f007"; /*fas fa-user*/
+}
+
+.tip-selector {
+  margin-top: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.7rem;
+}
+
+.tip-selector > * {
+  font-family: inherit;
+  display: block;
+
+  outline: none;
+  border: none;
+  background-color: var(--dark-cyan);
+  color: white;
+  height: 2.2rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+
+  transition: color 0.1s ease-in-out, background-color 0.1s, tranform 0.2s;
+}
+
+.tip-selector > input.custom {
+  font-family: inherit;
+  display: block;
+  background-color: var(--light-grey-cyan-2);
+  color: var(--dark-cyan);
+  width: 100%;
+  text-align: right;
+  padding-right: 0.7rem;
+  box-sizing: border-box;
+}
+
+.tip-selector > input.custom::placeholder {
+  font-size: 1rem;
+  color: var(--dark-grey-cyan-1);
+}
+
+.tip-selector > button.selected {
+  background-color: var(--strong-cyan);
+  color: black;
+}
+
+.tip-selector > button:hover {
+  transform: scale(1.04);
+}
+
+@media (min-width: 576px) {
+  .calculator {
+    flex-direction: row;
+  }
+
+  .tip-selector {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
